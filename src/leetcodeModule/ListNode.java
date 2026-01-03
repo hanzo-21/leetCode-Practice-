@@ -87,7 +87,53 @@ public class ListNode {
 
      */
 
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
+        // best solution
+
+
+
+        ListNode currentNode = new ListNode();
+
+        currentNode.val = l1.val + l2.val ;
+
+        if(currentNode.val > 9 ){
+            currentNode.val = currentNode.val % 10;
+            currentNode.next = new ListNode(1);
+        }
+
+        ListNode baseNode = currentNode;
+
+        while ( currentNode.next !=null || l1.next != null || l2.next != null){
+
+            if (currentNode.next == null){
+                currentNode.next = new ListNode(0);
+            }
+            currentNode = currentNode.next;
+
+
+            if (l1.next == null){
+                l1.next = new ListNode(0);
+            }
+            l1 = l1.next;
+
+
+            if (l2.next == null){
+                l2.next = new ListNode(0);
+            }
+            l2 = l2.next;
+
+            currentNode.val = currentNode.val + l1.val + l2.val;
+
+            if(currentNode.val > 9){
+                currentNode.val = currentNode.val % 10;
+                currentNode.next = new ListNode(1);
+            }
+        }
+
+
+        return baseNode;
+    }
 
 
 
@@ -95,44 +141,38 @@ public class ListNode {
 
     public static void main(String[] args) {
 
-        ListNode a0  = new ListNode(9);
-        ListNode a1  = new ListNode(3,a0);
-        ListNode a2  = new ListNode(4,a1);
-        ListNode a3  = new ListNode(2,a2);
-        ListNode a4  = new ListNode(3,a3);
-        ListNode a5  = new ListNode(4,a4);
-        ListNode a6  = new ListNode(2,a5);
-        ListNode a7  = new ListNode(3,a6);
-        ListNode a8  = new ListNode(4,a7);
-        ListNode a9  = new ListNode(2,a8);
-        ListNode a10  = new ListNode(3,a9);
+        ListNode a0  = new ListNode(3);
+        ListNode a1  = new ListNode(9,a0);
+        ListNode a2  = new ListNode(9,a1);
+        ListNode a3  = new ListNode(9,a2);
+        ListNode a4  = new ListNode(9,a3);
+        ListNode a5  = new ListNode(9,a4);
+        ListNode a6  = new ListNode(9,a5);
 
-
-        ListNode b0  = new ListNode(9);
+        ListNode b0  = new ListNode(3);
         ListNode b1  = new ListNode(9,b0);
         ListNode b2  = new ListNode(9,b1);
         ListNode b3  = new ListNode(9,b2);
-        ListNode b4  = new ListNode(3,b3);
-        ListNode b5  = new ListNode(4,b4);
-        ListNode b6  = new ListNode(2,b5);
-        ListNode b7  = new ListNode(3,b6);
-        ListNode b8  = new ListNode(4,b7);
-        ListNode b9  = new ListNode(2,b8);
-        ListNode b10  = new ListNode(3,b9);
 
-        printListNode(a10);
 
+
+        printListNode(a6);
+        System.out.println();
+        printListNode(b3);
         System.out.println();
 
-        printListNode(b10);
 
-        ListNode res = new ListNode();
+        ListNode result = addTwoNumbers(a0 , b0);
 
-        res =  res.addTwoNumbers(a10 , b10);
+        printListNode(result);
 
-        System.out.println();
 
-        printListNode(res);
+
+
+
+
+
+
 
     }
 
