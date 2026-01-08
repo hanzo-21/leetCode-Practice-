@@ -49,7 +49,7 @@ public class MedianOfTwoSortedArrays_naiveApproach {
 
         int middle = combinedArray.length / 2;
 
-        if(middle % 2 ==0  ){
+        if(combinedArray.length % 2 ==0  ){
             return (combinedArray[middle] + combinedArray[middle-1])/2.0;
         }else {
             return combinedArray[middle];
