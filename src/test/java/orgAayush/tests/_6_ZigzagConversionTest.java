@@ -57,4 +57,16 @@ public class _6_ZigzagConversionTest extends TestCase {
         assertEquals(expectedOutput,actualOutput);
 
     }
+
+    public void test5(){
+        String input= "AB";
+        int numRows = 1;
+
+        String expectedOutput = "AB";
+
+        String actualOutput = zc.convert(input,numRows);
+
+        assertEquals(expectedOutput,actualOutput);
+
+    }
 }
