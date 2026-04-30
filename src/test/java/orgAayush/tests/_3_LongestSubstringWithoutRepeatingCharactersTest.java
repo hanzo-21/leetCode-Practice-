@@ -1,7 +1,6 @@
 package orgAayush.tests;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import orgAayush.problems._3_LongestSubstringWithoutRepeatingCharacters;
 
 public class _3_LongestSubstringWithoutRepeatingCharactersTest extends TestCase {
