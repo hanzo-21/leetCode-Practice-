@@ -5,7 +5,7 @@ import orgAayush.problems._1_twoSumProblem;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class twosumproblemtest extends TestCase {
+public class _1_twosumproblemtest extends TestCase {
 
     _1_twoSumProblem twoSumProblem  = new _1_twoSumProblem();
 
