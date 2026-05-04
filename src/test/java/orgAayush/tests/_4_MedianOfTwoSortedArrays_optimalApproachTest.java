@@ -1,7 +1,6 @@
 package orgAayush.tests;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import orgAayush.problems._4_MedianOfTwoSortedArrays_optimalApproach;
 
 public class _4_MedianOfTwoSortedArrays_optimalApproachTest extends TestCase {
